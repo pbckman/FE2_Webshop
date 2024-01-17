@@ -4,7 +4,7 @@ const ProductWrapper = styled.div`
 position: relative;
     width: 250px;
     height: 310px;
-    background-color: #f1f1f1;
+    background-color: #f0f8ff;
     padding: 15px;
     border-radius: 30px;
 `
@@ -13,6 +13,7 @@ position: relative;
     img {
     max-width: 60%;
     max-height:60%;
+    border-radius: 20px;
 }
     display: flex;
     justify-content: center;
@@ -27,17 +28,17 @@ const DescriptionWrapper = styled.div`
 position: absolute;
 bottom: 20px;
 width: 170px;
-word-wrap: break-word;
 `
-const HThreeWrapper = styled.div`
-
-`
-
 const PriceWrapper = styled.div`
 position: absolute;
 right: 10px;
 width: 50px;
 bottom: 20px;
+`
+
+const ProductQuantity = styled.div`
+position: absolute;
+bottom: 7px;
 `
 
 
@@ -55,20 +56,21 @@ function ProductListItem() {
             </ShoppingCart>
 
             <ImgWrapper>
-                <img src="https://media.viskanassets.com/v2/sportshopenprod/normal/A141263_NOCOLOUR_01.jpg" alt="" />
+                <img src="\src\components\images\skis\ski_atomic_1.avif" alt="" />
             </ImgWrapper>
 
-            <HThreeWrapper>
-                <h3>K2 Mindbender</h3>
-            </HThreeWrapper>
-
             <DescriptionWrapper>
+                <h3>K2 Mindbender</h3>
                 <p>Men's Mindbender 96C allmountainskidor</p>
             </DescriptionWrapper>
 
             <PriceWrapper>
                 <h3>299$</h3>
             </PriceWrapper>
+
+            <ProductQuantity>
+                *Prod quant*
+            </ProductQuantity>
 
         </ProductWrapper>
     )

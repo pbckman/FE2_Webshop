@@ -8,13 +8,14 @@ width: 910px;
 background-color: aliceblue;
 position: relative;
 border-radius: 30px;
+border: 2px solid #f0f8ff;
 overflow: hidden;
 `
 
 const ImageWrapper = styled.div`
 height: 310px;
 width: 300px;
-background-color: #f1f1f1;
+background-color: #ffffff;
 position: relative;
 display: flex;
 justify-content: center;
@@ -66,7 +67,7 @@ function ShoppingCartListItem() {
         <ShoppingCartWrapper>
 
         <ImageWrapper>
-        <img src="https://media.viskanassets.com/v2/sportshopenprod/normal/A141263_NOCOLOUR_01.jpg" alt="" />
+        <img src="\src\components\images\skis\ski_atomic_1.avif" alt="" />
         </ImageWrapper>
 
         <HeadlineWrapper>
