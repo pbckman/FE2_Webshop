@@ -1,7 +1,6 @@
 import ProductListItem from "./components/ProductListItem"
 import ShoppingCartListItem from "./components/ShoppingCartListItem"
-import {styled, createGlobalStyle} from "styled-components"
-import React, { useState } from "react";
+import styled, {createGlobalStyle} from "styled-components"
 import Navbar from "./components/Navbar.jsx";
 import {Route, Routes} from "react-router-dom"
 import Home from "./pages/Home.jsx";
@@ -38,7 +37,7 @@ function App() {
       <ProductListItem />
       </Box>
           <GlobalStyle />
-      </>
+    </>
   )
 }
 
