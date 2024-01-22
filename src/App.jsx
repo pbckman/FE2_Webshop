@@ -32,10 +32,10 @@ function App() {
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/contact" element={<Contact/>} />
           </Routes>
-        <Box>
+{/*        <Box>
       <ShoppingCartListItem />
       <ProductListItem />
-      </Box>
+      </Box>*/}
           <GlobalStyle />
     </>
   )

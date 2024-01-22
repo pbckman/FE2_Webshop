@@ -2,7 +2,7 @@ import React from 'react';
 
 function Shop(props) {
     return (
-        <div>Shop</div>
+        <div></div>
     );
 }
 
