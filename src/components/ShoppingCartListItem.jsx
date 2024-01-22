@@ -3,13 +3,17 @@ import SkiLengthDropdown from "./SkiLengthDropdown";
 import SkiQuantitySelector from "./QuantityOfProductSelector";
 
 const ShoppingCartWrapper = styled.div`
-height: 310px;
+height: 270px;
 width: 910px;
 background-color: aliceblue;
 position: relative;
 border-radius: 30px;
 border: 2px solid #f0f8ff;
 overflow: hidden;
+margin-top: 20px;
+h3, p, label {
+        font-family: 'Roboto', sans-serif;
+    }
 `
 
 const ImageWrapper = styled.div`
@@ -20,8 +24,8 @@ position: relative;
 display: flex;
 justify-content: center;
 img {
-    max-width: 100%;
-    max-height:100%;
+    max-width: 90%;
+    max-height: 90%;
 }
 
 `
@@ -71,11 +75,11 @@ function ShoppingCartListItem() {
         </ImageWrapper>
 
         <HeadlineWrapper>
-            <h3>K2 Mindbender</h3>
+            <h3>Atomic Bent 100</h3>
         </HeadlineWrapper>
 
         <PriceWrapper>
-            <h3>$299</h3>
+            <h3>$399</h3>
         </PriceWrapper>
 
         <ItemSpecifics>
