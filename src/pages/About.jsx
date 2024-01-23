@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from "../components/Navbar.jsx";
 
-function Contact(props) {
+function About(props) {
     return (
         <>
-        <Navbar />
-            <div>CONTACT</div>
+            <Navbar />
+            <div>ABOUT</div>
         </>
     );
 }
 
-export default Contact;
+export default About;

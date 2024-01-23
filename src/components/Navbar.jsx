@@ -18,7 +18,8 @@ const NavWrapper = styled.nav`
 `;
 
 const SiteTitle = styled.a`
-  font-family: "Montserrat ExtraBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
   font-size: 30px;
   padding-left: 20px;
   padding-top: 20px;
@@ -82,7 +83,7 @@ const CenteredNav = styled.div`
 
 const NavItem = styled.li`
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 400;
   color: white;
   a{
     text-decoration: none;
@@ -92,8 +93,8 @@ const NavItem = styled.li`
   a:focus { text-decoration: none; color: #007bec; }
   a:hover, a:active { text-decoration: none; color:#007bec }
   @media(max-width: 1000px) {
-    font-family: "Montserrat ExtraBold", sans-serif;
-    font-weight: lighter;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
     font-size: 15px;
     padding: 10px;
   }
@@ -125,7 +126,7 @@ const UnderNavbar = styled.div`
 
 const UnderNavBarText = styled.p`
   color: white;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 12px;
   gap: 100px;
   display: flex;
@@ -172,16 +173,16 @@ const Navbar = () => {
                     <Link to="/" onClick={hideNavLinks}>Home</Link>
                 </NavItem>
                 <NavItem>
-                    <Link to="/shop" onClick={hideNavLinks}>Ski</Link>
+                    <Link to="/skis" onClick={hideNavLinks}>Ski</Link>
                 </NavItem>
                 <NavItem>
-                    <Link to="/shop" onClick={hideNavLinks}>Snowboard</Link>
+                    <Link to="/snowboards" onClick={hideNavLinks}>Snowboard</Link>
                 </NavItem>
                 <NavItem>
-                    <Link to="/shop" onClick={hideNavLinks}>Accessories</Link>
+                    <Link to="/accessories" onClick={hideNavLinks}>Accessories</Link>
                 </NavItem>
                 <NavItem>
-                    <Link to="/about-us" onClick={hideNavLinks}>About</Link>
+                    <Link to="/about" onClick={hideNavLinks}>About</Link>
                 </NavItem>
                 <NavItem>
                     <Link to="/contact" onClick={hideNavLinks}>Contact</Link>
