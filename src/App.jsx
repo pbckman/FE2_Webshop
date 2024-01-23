@@ -18,15 +18,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Box = styled.div`
-margin: 10px;
-display: flex;
-justify-content: space-evenly;
-`
-
 function App() {
   return(
-<<<<<<< HEAD
       <>
           <Routes>
               <Route path="/" element={<Home />} />
@@ -37,18 +30,8 @@ function App() {
               <Route path="/contact" element={<Contact/>} />
               <Route path="/cart" element={<Cart/>} />
           </Routes>
-{/*        <Box>
-      <ShoppingCartListItem />
-      <ProductListItem />
-      </Box>*/}
           <GlobalStyle />
     </>
-=======
-    <Box>
-    <ShoppingCartListItem />
-    <ProductListItem />
-    </Box>
->>>>>>> ef66a2597ddabbb9944380bb49662114d74b6bcc
   )
 }
 
