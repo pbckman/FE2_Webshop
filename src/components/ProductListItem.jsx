@@ -3,16 +3,21 @@ import styled from "styled-components";
 const ProductWrapper = styled.div`
 position: relative;
     width: 250px;
-    height: 310px;
+    height: 340px;
     background-color: #f0f8ff;
     padding: 15px;
     border-radius: 30px;
+
+    h3, p {
+        font-family: 'Roboto', sans-serif;
+    }
 `
 const ImgWrapper = styled.div`
 position: relative;
+padding-top: 20px;
     img {
-    max-width: 60%;
-    max-height:60%;
+    max-width: 65%;
+    max-height: 65%;
     border-radius: 20px;
 }
     display: flex;
@@ -60,7 +65,7 @@ function ProductListItem() {
             </ImgWrapper>
 
             <DescriptionWrapper>
-                <h3>K2 Mindbender</h3>
+                <h3>Atomic Bent 100</h3>
                 <p>Men's Mindbender 96C allmountainskidor</p>
             </DescriptionWrapper>
 

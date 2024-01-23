@@ -26,6 +26,7 @@ justify-content: space-evenly;
 
 function App() {
   return(
+<<<<<<< HEAD
       <>
           <Routes>
               <Route path="/" element={<Home />} />
@@ -42,6 +43,12 @@ function App() {
       </Box>*/}
           <GlobalStyle />
     </>
+=======
+    <Box>
+    <ShoppingCartListItem />
+    <ProductListItem />
+    </Box>
+>>>>>>> ef66a2597ddabbb9944380bb49662114d74b6bcc
   )
 }
 
