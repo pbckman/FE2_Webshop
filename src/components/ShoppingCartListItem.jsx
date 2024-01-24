@@ -8,11 +8,11 @@ width: 910px;
 background-color: aliceblue;
 position: relative;
 border-radius: 30px;
-border: 2px solid #f0f8ff;
+border: 3px solid #f0f8ff;
 overflow: hidden;
 margin-top: 20px;
 h3, p, label {
-        font-family: 'Roboto', sans-serif;
+    font-family: "Montserrat", sans-serif;
     }
 `
 

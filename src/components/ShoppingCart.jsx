@@ -13,7 +13,7 @@ display: flex;
 flex-direction: row;
 
  h3 {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 35px;
     margin-right: 20px;
     margin-top: 15px;
@@ -22,7 +22,7 @@ flex-direction: row;
  p {
     font-size: 15px;
     margin-top: 30px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Montserrat", sans-serif;
  }
 `
 
