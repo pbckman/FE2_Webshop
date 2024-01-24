@@ -9,6 +9,7 @@ import Snowboards from "./pages/Snowboard.jsx";
 import Accessories from "./pages/Accessories.jsx";
 import Cart from "./pages/Cart.jsx";
 import About from "./pages/About.jsx";
+import OrderSuccess from "./pages/OrderSuccess.jsx";
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -29,7 +30,8 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact/>} />
               <Route path="/cart" element={<Cart/>} />
-          </Routes>
+              <Route path="/ordersuccess" element={<OrderSuccess/>} />
+          </Routes> 
           <GlobalStyle />
     </>
   )

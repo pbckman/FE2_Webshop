@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 
@@ -17,9 +17,9 @@ const NavWrapper = styled.nav`
   }
 `;
 
-const SiteTitle = styled.a`
+const SiteTitle = styled.div`
   font-family: "Montserrat", sans-serif;
-  font-weight: 900;
+  font-weight: 800;
   font-size: 30px;
   padding-left: 20px;
   padding-top: 20px;
@@ -42,8 +42,8 @@ const SiteTitle = styled.a`
 `;
 
 const NavLinkWrapper = styled.div`
-  @media(max-width: 1000px) {
-    display: ${({ showNavLinks }) => (showNavLinks ? "flex" : "none")};
+  @media (max-width: 1000px) {
+    display: ${({ shownavlinks }) => (shownavlinks ? 'flex' : 'none')};
     flex-direction: column;
     position: absolute;
     top: 8vh;
@@ -100,7 +100,7 @@ const NavItem = styled.li`
   }
 `;
 
-const NavSvgLink = styled(Link)`
+const NavSvgLink = styled.div`
   display: flex;
   align-items: center;
   padding: 10px 50px 0 0;
@@ -124,7 +124,7 @@ const UnderNavbar = styled.div`
   }
 `;
 
-const UnderNavBarText = styled.p`
+const UnderNavBarText = styled.div`
   color: white;
   font-weight: 400;
   font-size: 12px;
@@ -163,35 +163,35 @@ const Navbar = () => {
         <>
         <NavWrapper>
             <SiteTitle>
-                <Link to="/">Alpine<span>Store</span></Link>
+                <NavLink to="/">Alpine<span>Store</span></NavLink>
             </SiteTitle>
             <StyledFontAwesomeIcon icon={faBars} onClick={toggleNavLinks} />
             <CenteredNav>
-                <NavLinkWrapper showNavLinks={showNavLinks}>
+                <NavLinkWrapper shownavlinks={showNavLinks}>
                     <NavList>
                 <NavItem>
-                    <Link to="/" onClick={hideNavLinks}>Home</Link>
+                    <NavLink to="/" onClick={hideNavLinks}>Hem</NavLink>
                 </NavItem>
                 <NavItem>
-                    <Link to="/skis" onClick={hideNavLinks}>Ski</Link>
+                    <NavLink to="/skis" onClick={hideNavLinks}>Skidor</NavLink>
                 </NavItem>
                 <NavItem>
-                    <Link to="/snowboards" onClick={hideNavLinks}>Snowboard</Link>
+                    <NavLink to="/snowboards" onClick={hideNavLinks}>Snowboard</NavLink>
                 </NavItem>
                 <NavItem>
-                    <Link to="/accessories" onClick={hideNavLinks}>Accessories</Link>
+                    <NavLink to="/accessories" onClick={hideNavLinks}>Tillbehör</NavLink>
                 </NavItem>
                 <NavItem>
-                    <Link to="/about" onClick={hideNavLinks}>About</Link>
+                    <NavLink to="/about" onClick={hideNavLinks}>Om oss</NavLink>
                 </NavItem>
                 <NavItem>
-                    <Link to="/contact" onClick={hideNavLinks}>Contact</Link>
+                    <NavLink to="/contact" onClick={hideNavLinks}>Kontakt</NavLink>
                 </NavItem>
             </NavList>
                 </NavLinkWrapper>
             </CenteredNav>
             <NavSvgLink to="/cart">
-                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-shopping-cart" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-shopping-cart" width="34" height="34" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#00abfb" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
                     <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
@@ -202,9 +202,9 @@ const Navbar = () => {
         </NavWrapper>
         <UnderNavbar>
             <UnderNavBarText>
-                <p>Free shipping on orders over $499</p>
-                <p>Same day delivery</p>
-                <p>30-day return policy</p>
+                <p>Fri frakt på ordrar över 1000kr</p>
+                <p>Vi levererar samma dag*</p>
+                <p>30 dagars öppet köp</p>
             </UnderNavBarText>
         </UnderNavbar>
         </>
