@@ -27,7 +27,6 @@ function ProductList() {
             <ProductListItem />
             <ProductListItem />
             <ProductListItem />
-            <ProductListItem />
             
             
         </ProductListWrapper>

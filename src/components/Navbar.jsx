@@ -82,7 +82,7 @@ const CenteredNav = styled.div`
 `;
 
 const NavItem = styled.li`
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
   color: white;
   a{
@@ -182,7 +182,7 @@ const Navbar = () => {
                     <NavLink to="/accessories" onClick={hideNavLinks}>Tillbehör</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="/about" onClick={hideNavLinks}>Om oss</NavLink>
+                    <NavLink to="/about" onClick={hideNavLinks}>Om</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink to="/contact" onClick={hideNavLinks}>Kontakt</NavLink>

@@ -9,6 +9,7 @@ position: relative;
     border-radius: 20px;
     overflow: hidden;
     margin-top: 40px;
+    margin-bottom: 40px;
     h3, p {
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
