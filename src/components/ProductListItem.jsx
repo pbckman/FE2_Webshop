@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React, { useEffect } from "react";
 
 const ProductWrapper = styled.div`
 position: relative;
@@ -9,7 +10,6 @@ position: relative;
     border-radius: 20px;
     overflow: hidden;
     margin-top: 40px;
-    margin-bottom: 40px;
     h3, p {
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
@@ -32,7 +32,7 @@ position: absolute;
 top: 10px;
 right: 10px;
 `
-const DescriptionWrapper = styled.div`
+const TitleWrapper = styled.div`
 position: relative;
 bottom: 5px;
 width: 170px;
@@ -53,12 +53,13 @@ left: 10px;
 `
 
 
-function ProductListItem() {
+const ProductListItem = (props) => {
+
     return (
         <ProductWrapper>
             <ImgWrapper>
             <ShoppingCart>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg"  width="30" height="30" viewBox="0 0 24 24"  stroke="#00abfb" fill="none" >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
                     <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
@@ -67,20 +68,19 @@ function ProductListItem() {
                 </svg>
             </ShoppingCart>
 
-            
-                <img src="\src\components\images\skis\ski_atomic_1.avif" alt="" />
+                <img src={`http://localhost:1337${props.image}`} alt="" />
             </ImgWrapper>
 
-            <DescriptionWrapper>
-                <h3>Atomic Bent 100</h3>
-            </DescriptionWrapper>
+            <TitleWrapper>
+                <h3>{props.title}</h3>
+            </TitleWrapper>
 
             <ProductQuantity>
                 <h3>x i lager</h3>
             </ProductQuantity>
 
             <PriceWrapper>
-                <p>4 999kr</p>
+                <p>{props.price} kr </p>
             </PriceWrapper>
 
         </ProductWrapper>
