@@ -8,8 +8,10 @@ const ProductListWrapper = styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
-padding-left: 368px;
-padding-right: 465px;
+align-items: center;
+padding-inline-start: 370px;
+padding-inline-end: 370px;
+margin: 15px;
 `
 
 
