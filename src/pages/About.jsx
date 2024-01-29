@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from "../components/Navbar.jsx";
 import styled from "styled-components";
 import Footer from "../components/Footer.jsx";
-import AboutImg from "../components/images/backgroundimages/AboutPic1.png";
+import AboutImg from "../components/images/backgroundimages/AboutPic.png";
 
 const AboutWrapper = styled.div`
   height: auto;
