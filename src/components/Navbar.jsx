@@ -74,7 +74,7 @@ const CenteredNav = styled.div`
   align-items: center;
   justify-content: center; /* margin-left: auto; */
   flex: 1;                 /* margin-right: auto; */
-  padding-right: 250px;
+  padding-right: 180px;
   @media(max-width: 1000px) {
     padding: 0;
     text-align: center;
@@ -82,7 +82,7 @@ const CenteredNav = styled.div`
 `;
 
 const NavItem = styled.li`
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
   color: white;
   a{
@@ -117,7 +117,9 @@ const NavSvgLink = styled.div`
 
 const UnderNavbar = styled.div` 
   background-color: #007bec;
-  height: 40px;
+  min-height: 40px;
+  margin: 0;
+  padding: 0;
   @media(max-width: 1000px) {
     display: flex;
     margin-top: 20px;

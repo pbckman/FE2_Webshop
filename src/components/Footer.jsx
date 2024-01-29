@@ -29,6 +29,10 @@ const LinkWrapper = styled.div`
 
 const LinkList = styled.ul`
   list-style: none;
+  h3 {
+    margin: 0;
+    padding-bottom: 6px;
+  }
 `;
 
 const LinkListItem = styled.li`
@@ -55,17 +59,17 @@ function Footer(props) {
                         <h3>Shoppa</h3>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/Skis">Skidor</NavLink>
+                                <NavLink to="/skis">Skidor</NavLink>
                             </LinkText>
                         </LinkListItem>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/Snowboards">Snowboards</NavLink>
+                                <NavLink to="/snowboards">Snowboards</NavLink>
                             </LinkText>
                         </LinkListItem>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/Accessories">Tillbehör</NavLink>
+                                <NavLink to="/accessories">Tillbehör</NavLink>
                             </LinkText>
                         </LinkListItem>
                     </LinkList>
@@ -73,17 +77,17 @@ function Footer(props) {
                         <h3>Villkor</h3>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/Skis">Leverans</NavLink>
+                                <NavLink to="/skis">Leverans</NavLink>
                             </LinkText>
                         </LinkListItem>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/Skis">Köpvillkor</NavLink>
+                                <NavLink to="/skis">Köpvillkor</NavLink>
                             </LinkText>
                         </LinkListItem>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/Skis">Byten och returer</NavLink>
+                                <NavLink to="/skis">Byten/Returer</NavLink>
                             </LinkText>
                         </LinkListItem>
                     </LinkList>
@@ -91,17 +95,17 @@ function Footer(props) {
                         <h3>Information</h3>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/About">Om butiken</NavLink>
+                                <NavLink to="/about">Om butiken</NavLink>
                             </LinkText>
                         </LinkListItem>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/Contact">Kontakt</NavLink>
+                                <NavLink to="/contact">Kontakt</NavLink>
                             </LinkText>
                         </LinkListItem>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/Skis">Hitta oss</NavLink>
+                                <NavLink to="/skis">Hitta oss</NavLink>
                             </LinkText>
                         </LinkListItem>
                     </LinkList>
