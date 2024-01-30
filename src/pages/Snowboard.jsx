@@ -1,13 +1,14 @@
 import React from 'react';
 import Navbar from "../components/Navbar.jsx";
 import SnowboardList from '../components/SnowboardList.jsx';
+import Footer from '../components/Footer.jsx';
 
-function Snowboards(props) {
+function Snowboards() {
     return (
         <>
             <Navbar />
-            <div>SNOWBOARDS</div>
             <SnowboardList></SnowboardList>
+            <Footer />
         </>
     );
 }

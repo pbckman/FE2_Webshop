@@ -14,6 +14,9 @@ position: relative;
         font-family: "Montserrat", sans-serif;
         font-size: 15px;
     }
+    h6 {
+    font-size: 10px;
+}
 `
 const ImgWrapper = styled.div`
 position: relative;
@@ -55,19 +58,20 @@ left: 10px;
 
 const ProductListItem = (props) => {
 
+    const  { isInStock } = props;
+
     return (
         <ProductWrapper>
             <ImgWrapper>
-            <ShoppingCart>
-                <svg xmlns="http://www.w3.org/2000/svg"  width="30" height="30" viewBox="0 0 24 24"  stroke="#00abfb" fill="none" >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                    <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l14 1l-1 7h-13" />
-                </svg>
-            </ShoppingCart>
-
+                <ShoppingCart>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke="#00abfb" fill="none" >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M17 17h-11v-14h-2" />
+                        <path d="M6 5l14 1l-1 7h-13" />
+                    </svg>
+                </ShoppingCart>
                 <img src={`http://localhost:1337${props.image}`} alt="" />
             </ImgWrapper>
 
@@ -75,8 +79,13 @@ const ProductListItem = (props) => {
                 <h3>{props.title}</h3>
             </TitleWrapper>
 
-            <ProductQuantity>
-                <h3>x i lager</h3>
+            <ProductQuantity style={{ color: isInStock ? "green" : "red" }}>
+                <h6>
+                    {isInStock
+                        ? `Finns i lager`
+                        : "Finns ej i lager"
+                    }
+                </h6>
             </ProductQuantity>
 
             <PriceWrapper>

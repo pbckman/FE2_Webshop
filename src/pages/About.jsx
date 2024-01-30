@@ -33,7 +33,7 @@ const SubHeading = styled.h2`
 
 const MainText = styled.div`
     width: 50%;
-  & > p:nth-of-type(4) {
+  & > p:nth-of-type(5) {
     font-weight: bold;
     text-align: center;
     padding: 20px 0 40px 0;
