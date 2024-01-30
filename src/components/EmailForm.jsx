@@ -15,7 +15,7 @@ const StyledInput = styled.input`
   margin-bottom: 10px;
   padding: 8px;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid lightgrey;
   background-color: #f5f5f5;
 `;
 
@@ -25,7 +25,7 @@ const StyledTextarea = styled.textarea`
   margin-bottom: 10px;
   padding: 8px;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid lightgrey;
   background-color: #f5f5f5;
 `;
 
@@ -36,7 +36,7 @@ const StyledButton = styled.button`
   color: #fff;
   cursor: pointer;
   border-radius: 10px;
-  border: 1px solid black;
+  border: 1px solid lightgrey;
 
   &:hover {
     background-color: #005fa3;
