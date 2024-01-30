@@ -1,14 +1,14 @@
 import React from 'react';
 import Navbar from "../components/Navbar.jsx";
 import AccessorieList from '../components/AccessorieList.jsx';
+import Footer from '../components/Footer.jsx';
 
-function Accessories(props) {
+function Accessories() {
     return (
         <>
             <Navbar />
-            <div>ACCESSORIES</div>
             <AccessorieList></AccessorieList>
-            
+            <Footer />
         </>
     );
 }
