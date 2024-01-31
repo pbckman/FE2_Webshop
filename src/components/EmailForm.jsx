@@ -7,7 +7,7 @@ const StyledForm = styled.form`
   flex-direction: column;
   align-items: center;
   max-width: 400px;
-  margin: auto;
+  padding-left: 20px; /* THIS */
 `;
 
 const StyledInput = styled.input`
@@ -18,6 +18,9 @@ const StyledInput = styled.input`
   border-radius: 10px;
   border: 1px solid lightgrey;
   background-color: #f5f5f5;
+  @media (max-width: 800px) {
+    width: 200px;
+  }
 `;
 
 const StyledTextarea = styled.textarea`
@@ -29,6 +32,9 @@ const StyledTextarea = styled.textarea`
   border-radius: 10px;
   border: 1px solid lightgrey;
   background-color: #f5f5f5;
+  @media (max-width: 800px) {
+    width: 200px;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -42,6 +48,9 @@ const StyledButton = styled.button`
 
   &:hover {
     background-color: ${(props) => (props.disabled ? '#007BECFF' : '#005fa3')};
+  }
+  @media (max-width: 800px) {
+    width: 200px;
   }
 `;
 

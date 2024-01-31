@@ -86,7 +86,6 @@ const BoxText = styled.div`
 
 
 
-
 function About(props) {
     return (
         <>

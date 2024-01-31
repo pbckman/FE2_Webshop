@@ -9,12 +9,15 @@ import {Form} from "react-router-dom";
 
 const ContactWrapper = styled.div`
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const BoxesContainer = styled.div`
   display: flex;
   justify-content: center;
-  @media(max-width: 720px) {
+  @media(max-width: 850px) {
     flex-direction: column;
     align-items: center;
   }
@@ -28,12 +31,10 @@ const Box = styled.div`
   height: 70vh;
   width: 70vh;
   box-sizing: border-box;
+  text-align: center;
   h1, h2, p{
     margin: 10px;
     padding: 0;
-  }
-  h2 {
-    text-align: center;
   }
   p {
     width: 300px;
@@ -44,23 +45,15 @@ const Box = styled.div`
     font-size: 20px;
     padding-top: 40px;
   }
-  img{
-      width: 600px;
-      height: 600px;
-      object-fit: cover;
-    }
-  @media (max-width: 1300px) {
-    margin-bottom: 330px;
+  @media (max-width: 1500px) {
+    margin-bottom: 150px;
     width: 400px;
-    img{
-      display: none;
-    }
   }`
 
 const SoMeBoxWrapper = styled.div`
   display: flex;
   justify-content: center;
-  @media (max-width: 720px) {
+  @media (max-width: 800px) {
     flex-direction: column;
   }
   `;
@@ -85,18 +78,31 @@ const SvgWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 20px;
-  svg{
+  svg {
     width: 100px;
     height: 100px;
     color: #007BECFF;
 
     &:hover {
       color: #005fa3;
+    }
   }
 ;`
 const FormWrapper = styled.div`
+  display: flex;
+  justify-content: center;
   padding-bottom: 75px;
-  width: 100%;
+  padding-top: 100px;
+  width: 300px;  
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  @media (max-width: 800px) {
+    margin-top: 330px;
+  }
+`;
+
+const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,21 +112,23 @@ const FormWrapper = styled.div`
     margin: 0;
   }
   p {
-    width: 500px;
+    padding-top: 20px;
     margin: 0;
-    padding: 10px;
-    
+    text-align: center;
   }
   & > p:nth-of-type(3) {
     font-weight: bold;
     text-align: center;
     font-size: 20px;
-    padding: 40px;
+    padding: 20px 0 20px 0;
   }
-  @media (max-width: 720px) {
-    margin-top: 500px;
+  @media (max-width: 1600px) {
+    padding-top: 100px;
+    p {
+      width: 250px;
+    }
   }
-`;
+  `;
 
 
 function Contact(props) {
@@ -158,10 +166,12 @@ function Contact(props) {
                   </Box>
               </BoxesContainer>
               <FormWrapper>
+                  <TextWrapper>
                   <h3>Hör av dig till oss!</h3>
                   <p>Vi uppskattar din passion för skidor och snowboards och är här för att göra din upplevelse ännu bättre. Har du frågor, önskemål eller behöver råd?</p>
                       <p>Fyll i formuläret nedan, och vårt team kommer att återkomma till dig snabbt.</p>
                       <p>Tack för att du väljer AlpineStore - din partner för en fantastisk vintersäsong!</p>
+                  </TextWrapper>
             <EmailForm />
               </FormWrapper>
           </ContactWrapper>
