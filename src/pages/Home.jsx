@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Frontpage from "../components/images/backgroundimages/Frontpage.jpg";
 import Checkout from './Checkout';
 import Skis from './Skis';
+import NewProductList from '../components/NewProductList';
 
 
 const FrontPic = styled.div`
@@ -101,7 +102,9 @@ function Home (props) {
                     <HeroSubheading>2024 Säsong</HeroSubheading>
                     <OrderButton onClick={handleOrderClick}>Beställ Nu</OrderButton>
                 </HeroText>
+                
             </FrontPic>
+            <NewProductList></NewProductList>
         
 
         </>

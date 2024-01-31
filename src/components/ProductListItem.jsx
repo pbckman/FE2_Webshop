@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ProductWrapper = styled.div`
 position: relative;
@@ -40,6 +41,19 @@ position: relative;
 bottom: 5px;
 width: 170px;
 left: 10px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+
+  a:hover {
+    cursor: pointer;
+    color: #00abfb; 
+  }
+
 `
 
 const ProductQuantity = styled.div`
@@ -60,6 +74,8 @@ const ProductListItem = (props) => {
 
     const  { isInStock } = props;
 
+    
+
     return (
         <ProductWrapper>
             <ImgWrapper>
@@ -73,10 +89,13 @@ const ProductListItem = (props) => {
                     </svg>
                 </ShoppingCart>
                 <img src={`http://localhost:1337${props.image}`} alt="" />
+                
             </ImgWrapper>
 
             <TitleWrapper>
+                <Link to="/product" >
                 <h3>{props.title}</h3>
+                </Link>
             </TitleWrapper>
 
             <ProductQuantity style={{ color: isInStock ? "green" : "red" }}>

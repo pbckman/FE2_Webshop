@@ -11,6 +11,7 @@ import Cart from "./pages/Cart.jsx";
 import About from "./pages/About.jsx";
 import OrderSuccess from "./pages/OrderSuccess.jsx";
 import Checkout from './pages/Checkout';
+import Product from "./pages/Product.jsx";
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -34,6 +35,7 @@ function App() {
               <Route path="/cart" element={<Cart/>} />
               <Route path="/ordersuccess" element={<OrderSuccess/>} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/product" element={<Product />} />
           </Routes> 
           <GlobalStyle />
     </>
