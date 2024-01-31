@@ -5,6 +5,7 @@ import Frontpage from "../components/images/backgroundimages/Frontpage.jpg";
 import Checkout from './Checkout';
 import Skis from './Skis';
 import NewProductList from '../components/NewProductList';
+import Footer from "../components/Footer.jsx";
 
 
 const FrontPic = styled.div`
@@ -104,8 +105,7 @@ function Home (props) {
                 </HeroText>
                 
             </FrontPic>
-            <NewProductList></NewProductList>
-        
+        <Footer />
 
         </>
     );

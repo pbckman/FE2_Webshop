@@ -25,6 +25,7 @@ const Logo = styled.div`
 const LinkWrapper = styled.div`
   display: flex;
   justify-content: center;
+  padding-right: 60px;
 `;
 
 const LinkList = styled.ul`
