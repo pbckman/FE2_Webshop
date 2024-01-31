@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Frontpage from "../components/images/backgroundimages/Frontpage.jpg";
 import Checkout from './Checkout';
 import Skis from './Skis';
+import Footer from "../components/Footer.jsx";
 
 
 const FrontPic = styled.div`
@@ -102,7 +103,7 @@ function Home (props) {
                     <OrderButton onClick={handleOrderClick}>Beställ Nu</OrderButton>
                 </HeroText>
             </FrontPic>
-        
+        <Footer />
 
         </>
     );

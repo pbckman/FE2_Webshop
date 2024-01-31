@@ -133,8 +133,11 @@ const UnderNavBarText = styled.div`
   gap: 100px;
   display: flex;
   align-items: center;
-  justify-content: center; /* margin-left: auto; */
-  flex: 1;                 /* margin-right: auto; */
+  justify-content: center; 
+  flex: 1;
+  @media(max-width: 1400px) {
+    margin-top: 15px;
+  }
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`

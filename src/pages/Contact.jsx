@@ -27,7 +27,6 @@ const Box = styled.div`
   align-items: center;
   height: 70vh;
   width: 70vh;
-  margin: 20px;
   box-sizing: border-box;
   h1, h2, p{
     margin: 10px;
@@ -35,6 +34,9 @@ const Box = styled.div`
   }
   h2 {
     text-align: center;
+  }
+  p {
+    width: 300px;
   }
   & > p:nth-of-type(3) {
     font-weight: bold;
@@ -47,7 +49,8 @@ const Box = styled.div`
       height: 600px;
       object-fit: cover;
     }
-  @media (max-width: 1190px) {
+  @media (max-width: 1300px) {
+    margin-bottom: 330px;
     width: 400px;
     img{
       display: none;
@@ -75,13 +78,13 @@ const SoMeBox = styled.div`
   box-sizing: border-box;
   border: 1px solid #ccc;
   cursor: pointer;
+  
 `;
 
 const SvgWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 20px;
-  
   svg{
     width: 100px;
     height: 100px;

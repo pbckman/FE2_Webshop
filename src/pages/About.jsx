@@ -56,6 +56,7 @@ const Box = styled.div`
   width: 200px;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
+  border-radius: 20px;
   box-sizing: border-box;
   @media (max-width: 720px) {
     margin-top: 40px;
