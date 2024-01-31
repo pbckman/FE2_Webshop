@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Frontpage from "../components/images/backgroundimages/Frontpage.jpg";
 import Checkout from './Checkout';
 import Skis from './Skis';
-import NewProductList from '../components/NewProductList';
+import NewProdList from '../components/NewProdList.jsx';
 import Footer from "../components/Footer.jsx";
 
 
@@ -105,6 +105,7 @@ function Home (props) {
                 </HeroText>
                 
             </FrontPic>
+            <NewProdList />
         <Footer />
 
         </>

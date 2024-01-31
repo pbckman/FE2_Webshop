@@ -34,8 +34,8 @@ function App() {
               <Route path="/contact" element={<Contact/>} />
               <Route path="/cart" element={<Cart/>} />
               <Route path="/ordersuccess" element={<OrderSuccess/>} />
-              <Route path="/checkout" element={<Checkout />} />
               <Route path="/product" element={<Product />} />
+              <Route path="/checkout" element={<Checkout />} />
           </Routes> 
           <GlobalStyle />
     </>
