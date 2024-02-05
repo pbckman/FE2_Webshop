@@ -79,7 +79,7 @@ const Container = styled.div`
     flex-basis: 98%; // En container per rad på mycket små skärmar
   }
 `;
-const Wrapper = styled.div`
+const NewProducts = styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
@@ -105,6 +105,8 @@ function Home (props) {
                 </HeroText>
                 
             </FrontPic>
+
+            <NewProducts> <h1>Nyinkomna produkter</h1> </NewProducts>
             <NewProdList />
         <Footer />
 

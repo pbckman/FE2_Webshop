@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ProductWrapper = styled.div`
 position: relative;
@@ -59,8 +59,11 @@ left: 10px;
 const ProductQuantity = styled.div`
 position: absolute;
 left: 170px;
-width: 100px;
-bottom: 0px;
+bottom: 6px;
+ p {
+    font-size: 10px;
+    font-weight: bold;
+}
 `
 
 const PriceWrapper = styled.div`
@@ -74,37 +77,31 @@ const ProductListItem = (props) => {
 
     const  { isInStock } = props;
 
-    
+    console.log('ProductListItem props:', props);
 
     return (
         <ProductWrapper>
             <ImgWrapper>
                 <ShoppingCart>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke="#00abfb" fill="none" >
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                        <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                        <path d="M17 17h-11v-14h-2" />
-                        <path d="M6 5l14 1l-1 7h-13" />
-                    </svg>
+                    
                 </ShoppingCart>
                 <img src={`http://localhost:1337${props.image}`} alt="" />
                 
             </ImgWrapper>
 
             <TitleWrapper>
-                <Link to="/product" >
+                <Link to={`/products/${props.id}`} >  
                 <h3>{props.title}</h3>
                 </Link>
             </TitleWrapper>
 
             <ProductQuantity style={{ color: isInStock ? "green" : "red" }}>
-                <h6>
+                <p>
                     {isInStock
                         ? `Finns i lager`
                         : "Finns ej i lager"
                     }
-                </h6>
+                </p>
             </ProductQuantity>
 
             <PriceWrapper>

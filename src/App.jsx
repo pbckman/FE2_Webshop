@@ -1,5 +1,3 @@
-import ProductListItem from "./components/ProductListItem"
-import ShoppingCartListItem from "./components/ShoppingCartListItem"
 import styled, {createGlobalStyle} from "styled-components"
 import {Route, Routes} from "react-router-dom"
 import Home from "./pages/Home.jsx";
@@ -34,8 +32,8 @@ function App() {
               <Route path="/contact" element={<Contact/>} />
               <Route path="/cart" element={<Cart/>} />
               <Route path="/ordersuccess" element={<OrderSuccess/>} />
-              <Route path="/product" element={<Product />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/products/:id" element={<Product />} />
           </Routes> 
           <GlobalStyle />
     </>
