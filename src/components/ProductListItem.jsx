@@ -77,8 +77,6 @@ const ProductListItem = (props) => {
 
     const  { isInStock } = props;
 
-    console.log('ProductListItem props:', props);
-
     return (
         <ProductWrapper>
             <ImgWrapper>
@@ -90,7 +88,7 @@ const ProductListItem = (props) => {
             </ImgWrapper>
 
             <TitleWrapper>
-                <Link to={`/products/${props.id}`} >  
+                <Link to={`/products/${props.id}`} > 
                 <h3>{props.title}</h3>
                 </Link>
             </TitleWrapper>
