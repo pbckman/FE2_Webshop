@@ -80,9 +80,7 @@ const ProductListItem = (props) => {
     return (
         <ProductWrapper>
             <ImgWrapper>
-                <ShoppingCart>
-                    
-                </ShoppingCart>
+            
                 <img src={`http://localhost:1337${props.image}`} alt="" />
                 
             </ImgWrapper>

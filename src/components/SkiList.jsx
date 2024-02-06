@@ -20,21 +20,24 @@ const SkiList = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const data = await axios.get('http://localhost:1337/api/products?populate=*&filters[quantities][quantity][$gte]=0&filters[category][id][$eq]=11')
+            const data = await axios.get('http://localhost:1337/api/products?populate=*&filters[category][id][$eq]=6')
             
 
             const tempArr = data.data.data.map((element) => {
                      
-                    const quantities = element.attributes.quantities.data;
-                    const isInStock = quantities.some((quantityObj) => quantityObj.attributes.quantity > 0);
+                    const sizes = Object.keys(element.attributes)
+                    .filter((key) => key.startsWith("size_"))
+                    .map((key) => element.attributes[key])
+
+                    const isInStock = sizes.some((quantity) => quantity > 0);
 
                     return {
                     id: element.id,
                     title: element.attributes.title,
                     price: element.attributes.price,
                     image: element.attributes.image.data.attributes.url,
-                    quantity: quantities,
-                    isInStock: isInStock,
+                    sizes: sizes,
+                    isInStock: isInStock
                     };
                 })
             setProducts(tempArr)
@@ -53,7 +56,7 @@ const SkiList = () => {
                     title={product.title}
                     price={product.price}
                     image={product.image}
-                    quantity={product.quantity}
+                    sizes={product.sizes}
                     isInStock={product.isInStock}
                 />
             ))}

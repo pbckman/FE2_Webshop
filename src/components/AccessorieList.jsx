@@ -19,46 +19,48 @@ const AccessorieList = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const data = await axios.get('http://localhost:1337/api/products?populate=*&filters[quantities][quantity][$gte]=0&filters[category][id][$eq]=9&filters[category][id][$eq]=10')
-            
+            const data = await axios.get('http://localhost:1337/api/products?populate=*&filters[category][id][$eq]=4&filters[category][id][$eq]=5')
+
 
             const tempArr = data.data.data.map((element) => {
-                     
-                    const quantities = element.attributes.quantities.data;
-                    const isInStock = quantities.some((quantityObj) => quantityObj.attributes.quantity > 0);
 
-                    return {
+                const sizes = Object.keys(element.attributes)
+                    .filter((key) => key.startsWith("size_"))
+                    .map((key) => element.attributes[key])
+                const isInStock = sizes.some((quantity) => quantity > 0);
+
+                return {
                     id: element.id,
                     title: element.attributes.title,
                     price: element.attributes.price,
                     image: element.attributes.image.data.attributes.url,
-                    quantity: quantities,
+                    sizes: sizes,
                     isInStock: isInStock,
-                    };
-                })
+                };
+            })
             setProducts(tempArr)
         }
         fetchData()
     }, [])
 
     return (
-        
+
         <Wrapper>
-            
+
             {products.map(product => (
                 <ProductListItem
-                    key={product.id}  
+                    key={product.id}
                     id={product.id}
                     title={product.title}
                     price={product.price}
                     image={product.image}
-                    quantity={product.quantity}
+                    sizes={product.sizes}
                     isInStock={product.isInStock}
                 />
             ))}
-            
+
         </Wrapper>
-       
+
     )
 }
 
