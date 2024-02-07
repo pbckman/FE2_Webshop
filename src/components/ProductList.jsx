@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 
-const ProductListWrapper = styled.div`
+const Wrapper = styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
@@ -20,23 +20,34 @@ const ProductList = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const data = await axios.get('http://localhost:1337/api/products/?populate=*')
+            const data = await axios.get('http://localhost:1337/api/products?populate=*')
+            
 
-            console.log(data.data.data);
-            const tempArr = data.data.data.map(element => ({
+            const tempArr = data.data.data.map((element) => {
+                     
+                    const sizes = Object.keys(element.attributes)
+                    .filter((key) => key.startsWith("size_"))
+                    .map((key) => element.attributes[key])
+
+                    const isInStock = sizes.some((quantity) => quantity > 0);
+
+                    return {
                     id: element.id,
                     title: element.attributes.title,
                     price: element.attributes.price,
-                    image: element.attributes.image.data.attributes.url
-                }))
+                    image: element.attributes.image.data.attributes.url,
+                    sizes: sizes,
+                    isInStock: isInStock
+                    };
+                })
             setProducts(tempArr)
         }
         fetchData()
     }, [])
 
     return (
-
-        <ProductListWrapper>
+        
+        <Wrapper>
             
             {products.map(product => (
                 <ProductListItem
@@ -45,10 +56,12 @@ const ProductList = () => {
                     title={product.title}
                     price={product.price}
                     image={product.image}
+                    sizes={product.sizes}
+                    isInStock={product.isInStock}
                 />
             ))}
             
-        </ProductListWrapper>
+        </Wrapper>
        
     )
 }

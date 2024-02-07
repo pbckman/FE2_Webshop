@@ -6,6 +6,7 @@ import Checkout from './Checkout';
 import Skis from './Skis';
 import NewProdList from '../components/NewProdList.jsx';
 import Footer from "../components/Footer.jsx";
+import { Link } from 'react-router-dom';
 
 
 const FrontPic = styled.div`
@@ -101,7 +102,9 @@ function Home (props) {
                 <HeroText>
                     <HeroHeading>Ny Kollektion</HeroHeading>
                     <HeroSubheading>2024 Säsong</HeroSubheading>
+                    <Link to="/allproducts">
                     <OrderButton onClick={handleOrderClick}>Beställ Nu</OrderButton>
+                    </Link>
                 </HeroText>
                 
             </FrontPic>
