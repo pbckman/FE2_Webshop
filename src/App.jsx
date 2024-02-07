@@ -11,6 +11,7 @@ import OrderSuccess from "./pages/OrderSuccess.jsx";
 import Checkout from './pages/Checkout';
 import Product from "./pages/Product.jsx";
 import TermsOfPurchase from "./pages/TermsOfPurchase.jsx";
+import AllProducts from "./pages/AllProducts.jsx"
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -36,6 +37,7 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/products/:id" element={<Product />} />
               <Route path="/termsofpurchase" element={<TermsOfPurchase/>} />
+              <Route path="/allproducts" element={<AllProducts />} />
           </Routes> 
           <GlobalStyle />
     </>
