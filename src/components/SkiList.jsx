@@ -20,7 +20,7 @@ const SkiList = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const data = await axios.get('http://localhost:1337/api/products?populate=*&filters[category][id][$eq]=6')
+            const data = await axios.get('http://localhost:1337/api/products?populate=*&filters[category][id][$eq]=3')
             
 
             const tempArr = data.data.data.map((element) => {

@@ -79,17 +79,17 @@ function Footer(props) {
                         <h3>Villkor</h3>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/skis">Leverans</NavLink>
+                                <NavLink to="/termsofpurchase">Leverans</NavLink>
                             </LinkText>
                         </LinkListItem>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/skis">Köpvillkor</NavLink>
+                                <NavLink to="/termsofpurchase">Köpvillkor</NavLink>
                             </LinkText>
                         </LinkListItem>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/skis">Byten/Returer</NavLink>
+                                <NavLink to="/termsofpurchase">Byten/Returer</NavLink>
                             </LinkText>
                         </LinkListItem>
                     </LinkList>

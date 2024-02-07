@@ -26,9 +26,13 @@ position: relative;
     max-width: 100%;
     max-height: 100%;
     border-radius: 0px;
+      transition: transform 0.4s, filter 0.3s ease-in-out;
 }
+  &:hover img {
+    transform: scale(1.1);
+    filter: opacity(80%);
+  }
     display: flex;
-    
 `
 const TitleWrapper = styled.div`
 position: relative;
@@ -74,8 +78,9 @@ const ProductListItem = (props) => {
     return (
         <ProductWrapper>
             <ImgWrapper>
+                <Link to={`/products/${props.id}`} >
                 <img src={`http://localhost:1337${props.image}`} alt="" />
-                
+                </Link>
             </ImgWrapper>
 
             <TitleWrapper>

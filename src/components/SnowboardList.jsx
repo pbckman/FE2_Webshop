@@ -20,7 +20,7 @@ const SnowboardList = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const data = await axios.get('http://localhost:1337/api/products?populate=*&filters[category][id][$eq]=7')
+            const data = await axios.get('http://localhost:1337/api/products?populate=*&filters[category][id][$eq]=4')
 
 
             const tempArr = data.data.data.map((element) => {

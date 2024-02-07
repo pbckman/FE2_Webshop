@@ -19,7 +19,7 @@ const AccessorieList = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const data = await axios.get('http://localhost:1337/api/products?populate=*&filters[category][id][$eq]=4&filters[category][id][$eq]=5')
+            const data = await axios.get('http://localhost:1337/api/products?populate=*&filters[category][id][$eq]=1&filters[category][id][$eq]=2')
 
 
             const tempArr = data.data.data.map((element) => {

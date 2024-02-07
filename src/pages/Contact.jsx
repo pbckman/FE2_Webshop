@@ -78,13 +78,15 @@ const SvgWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 20px;
+  
   svg {
     width: 100px;
     height: 100px;
     color: #007BECFF;
-
+    transition: transform 0.5s;
     &:hover {
       color: #005fa3;
+      transform: scale(1.2);;
     }
   }
 ;`
