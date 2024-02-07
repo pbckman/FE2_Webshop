@@ -19,7 +19,6 @@ const ProductList = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        console.log("hej");
         async function fetchData() {
             const data = await axios.get('http://localhost:1337/api/products/?populate=*')
 

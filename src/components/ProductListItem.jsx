@@ -30,12 +30,6 @@ position: relative;
     display: flex;
     
 `
-
-const ShoppingCart = styled.div`
-position: absolute;
-top: 10px;
-right: 10px;
-`
 const TitleWrapper = styled.div`
 position: relative;
 bottom: 5px;
@@ -80,7 +74,6 @@ const ProductListItem = (props) => {
     return (
         <ProductWrapper>
             <ImgWrapper>
-            
                 <img src={`http://localhost:1337${props.image}`} alt="" />
                 
             </ImgWrapper>

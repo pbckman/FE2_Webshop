@@ -43,12 +43,29 @@ margin-bottom: 50px;
 `
 
 const ButtonWrapper = styled.div`
-button {
-    margin-right: 10px;
+
+.button-size {
+  background-color: #0276FF;
+  border-radius: 8px;
+  border-style: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 80%;
+  margin-right: 10px;
+  padding: 10px 21px;
+  text-align: center;
+}
+
+.button-size:hover {
+  background-color: #1C84FF;
 }
 `
 
 const Quantity = styled.div`
+
+`
+
+const AddToCart = styled.div`
 
 `
 
@@ -77,10 +94,6 @@ const Product = () => {
                 const data = await axios.get(`http://localhost:1337/api/products/${id}?populate=*`)
                 const productData = data.data.data
 
-                console.log('API svar:', data.data)
-
-                
-
                 const sizes = Object.keys(productData.attributes)
                     .filter(key => key.startsWith("size_"))
                     .map(key => ({
@@ -98,6 +111,10 @@ const Product = () => {
                     image: productData.attributes.image.data.attributes.url,
                     sizes: sizes
                 })
+                // 
+                if (sizes.length > 0) {
+                    setSelectedSize(sizes[0].size)
+                }
             } catch (error) {
                 console.error('Error fetching product details:', error)
 
@@ -133,7 +150,7 @@ const Product = () => {
                             <ButtonWrapper>
                                 <h4>Välj storlek</h4>
                                 {product.sizes.map((size) => (
-                                    <button className='button'
+                                    <button className='button-size'
                                         key={size.size}
                                         onClick={() => changeSize(size.size)}
                                     >
@@ -147,6 +164,10 @@ const Product = () => {
                                     <p> {product.sizes.find(size => size.size === selectedSize)?.quantity} st i lager</p>
                                 )}
                             </Quantity>
+
+                            <AddToCart>
+                                
+                            </AddToCart>
 
                         </InfoWrapper>
 
@@ -163,4 +184,4 @@ const Product = () => {
     );
 }
 
-export default Product;
+export default Product

@@ -28,7 +28,8 @@ const NewProductList = () => {
                 const sizes = Object.keys(element.attributes)
                 .filter((key) => key.startsWith("size_"))
                 .map((key) => element.attributes[key])
-                    const isInStock = sizes.some((quantity) => quantity > 0);
+
+                const isInStock = sizes.some((quantity) => quantity > 0);
 
                     return {
                     id: element.id,
