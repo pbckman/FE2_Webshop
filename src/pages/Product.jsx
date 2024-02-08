@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Navbar from "../components/Navbar.jsx";
 import Footer from '../components/Footer.jsx';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
+import { CartContext } from '../components/CartContext.jsx'; // Importera din CartContext
 
 const Wrapper = styled.div`
  display: flex;
  justify-content: space-around;
-
-
 `
 const ImgWrapper = styled.div`
 
@@ -61,19 +60,47 @@ const ButtonWrapper = styled.div`
 }
 `
 
-const Quantity = styled.div`
-
-`
-
 const AddToCart = styled.div`
 
 `
+const Quantity = styled.div`
+`
+
+const StyledButton = styled.button`
+  width: 150px;
+  padding: 15px;
+  margin: 30px;
+  background-color: ${(props) => (props.disabled ? '#003b6b' : '#007BECFF')};
+  color: ${(props) => (props.disabled ? '#b9b9b9' : '#ffffff')};
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+
+  &:hover {
+    background-color: ${(props) => (props.disabled ? '#007BECFF' : '#005fa3')};
+  }
+  @media (max-width: 800px) {
+    width: 200px;
+  }
+`
+
+const StyledLabel = styled.div`
+font-weight: bold;
+margin-top: 30px;
+margin-bottom: 20px;
+`
+
+const StyledQuantity = styled.div`
+`;
 
 
 const Product = () => {
     const { id } = useParams()
     const [product, setProduct] = useState()
     const [selectedSize, setSelectedSize] = useState()
+    const [quantity, setQuantity] = useState(1); 
+    const { dispatch } = useContext(CartContext); 
+    const [showPopup, setShowPopup] = useState(false);
 
     const sizeMappings = {
         size_boot42: "42",
@@ -128,6 +155,24 @@ const Product = () => {
         setSelectedSize(size)
     }
 
+    const handleAddToCart = () => {
+        dispatch({
+          type: 'ADD_TO_CART',
+          payload: {
+            product: {
+              id: product.id,
+              title: product.title,
+              price: product.price,
+              selectedSize,
+              quantity,
+            },
+          },
+        });
+        setShowPopup(true);
+        setTimeout(() => setShowPopup(false), 3000);
+      };
+      
+
     return (
         <>
             <Navbar />
@@ -165,8 +210,25 @@ const Product = () => {
                                 )}
                             </Quantity>
 
+                            
+                            <StyledLabel>Välj Antal</StyledLabel>
+                            <StyledQuantity>    
+                                <input
+                                    type="number"
+                                    value={quantity}
+                                    onChange={(e) => setQuantity(e.target.value)}
+                                    min="1"
+                                />
+                            </StyledQuantity>
+
                             <AddToCart>
-                                
+                            <StyledButton onClick={() => window.history.back()}>Tillbaka</StyledButton>
+                            <StyledButton onClick={handleAddToCart}>Lägg Till</StyledButton>
+                            {showPopup && (
+                            <div style={{ position: 'fixed', bottom: '20px', right: '20px', background: 'lightgreen', padding: '15px', borderRadius: '5px' }}>
+                                Tillagd till varukorgen
+                            </div>
+                            )}
                             </AddToCart>
 
                         </InfoWrapper>

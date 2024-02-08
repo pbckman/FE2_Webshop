@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Frontpage from "../components/images/backgroundimages/Frontpage.jpg";
-import Checkout from './Checkout';
-import Skis from './Skis';
 import NewProdList from '../components/NewProdList.jsx';
 import Footer from "../components/Footer.jsx";
 import { Link } from 'react-router-dom';
@@ -56,30 +54,6 @@ const OrderButton = styled.button`
   }
 `;
 
-const ContainersWrapper = styled.div`
-  display: flex;
-  justify-content: space-around; // Ger mellanrum mellan varje container
-  align-items: center; // Centrerar innehållet vertikalt inuti varje container
-  margin: 20px 0; // Ger lite utrymme ovanför och under containrarna
-`;
-
-const Container = styled.div`
-  flex-basis: 22%; // Ger varje container en basbredd, lite mindre än en fjärdedel för att kompensera för mellanrum
-  height: 150px; // Ersätt med önskad höjd
-  background-color: #f0f0f0; // Lägg till en bakgrundsfärg så att containrarna syns
-  border: 1px solid #ccc; // Lägg till en gräns för att definiera containerns kanter
-  margin: 0 10px; // Ger mellanrum mellan containrarna
-
-  // Lägg till responsivitet om det behövs
-  @media (max-width: 768px) {
-    flex-basis: 48%; // Större basbredd för att visa två containrar per rad på mindre skärmar
-    margin: 10px; // Mindre marginal för att passa innehållet
-  }
-
-  @media (max-width: 480px) {
-    flex-basis: 98%; // En container per rad på mycket små skärmar
-  }
-`;
 const NewProducts = styled.div`
 display: flex;
 flex-wrap: wrap;
@@ -92,7 +66,6 @@ margin: 15px;
 function Home (props) {
    
     const handleOrderClick = () => {
-        // Här kan du använda props.history.push('/desired-path') om du använder React Router
     };
 
     return (

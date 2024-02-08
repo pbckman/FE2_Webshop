@@ -100,21 +100,6 @@ const NavItem = styled.li`
   }
 `;
 
-const NavSvgLink = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 10px 50px 0 0;
-  text-decoration: none;
-
-  &:hover {
-    color: black; /* Change color on hover */
-  }
-  @media(max-width: 1000px) {
-    padding-left: 90px;
-  }
-  
-`;
-
 const UnderNavbar = styled.div` 
   background-color: #007bec;
   min-height: 40px;
@@ -150,6 +135,21 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
   @media(max-width: 1000px){
     display: block;
+  }
+`;
+
+const StyledNavLink = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px 40px 0 0; // Decrease the right padding to move the icon to the left
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+  }
+
+  @media(max-width: 1000px) {
+    padding-left: 90px;
   }
 `;
 
@@ -195,7 +195,8 @@ const Navbar = () => {
             </NavList>
                 </NavLinkWrapper>
             </CenteredNav>
-            <NavSvgLink to="/cart">
+              <StyledNavLink>
+                <NavLink to="/cart">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-shopping-cart" width="34" height="34" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#00abfb" fill="none" strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
@@ -203,7 +204,8 @@ const Navbar = () => {
                     <path d="M17 17h-11v-14h-2" />
                     <path d="M6 5l14 1l-1 7h-13" />
                 </svg>
-            </NavSvgLink>
+                </NavLink>
+              </StyledNavLink>
         </NavWrapper>
         <UnderNavbar>
             <UnderNavBarText>

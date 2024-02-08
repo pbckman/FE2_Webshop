@@ -113,8 +113,7 @@ const Checkout = () => {
 
   return (
     <FormWrapper>
-      <h2>Varukorg</h2>
-      {/* Varukorgsinnehåll */}
+      <h2>Betalningsuppgifter</h2>
 
       <StepContainer>
         <h3>Steg 1: Kunduppgifter</h3>
