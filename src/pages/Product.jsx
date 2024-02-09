@@ -55,6 +55,10 @@ const ButtonWrapper = styled.div`
   text-align: center;
 }
 
+.button-size:focus {
+    border: 3px solid #F2A42A;
+}
+
 .button-size:hover {
   background-color: #1C84FF;
 }
@@ -138,7 +142,7 @@ const Product = () => {
                     image: productData.attributes.image.data.attributes.url,
                     sizes: sizes
                 })
-                // 
+
                 if (sizes.length > 0) {
                     setSelectedSize(sizes[0].size)
                 }
