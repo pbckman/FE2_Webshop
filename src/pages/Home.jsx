@@ -44,17 +44,22 @@ const HeroSubheading = styled.h1`
 `;
 
 const OrderButton = styled.button`
-  background-color: #000;
+  font-family: Montserrat, sans-serif;
+  font-weight: bolder;
+  background-color: Black;
   color: white;
   padding: 1em 2em;
   font-size: 1em;
+  width: 270px;
+  height: 60px;
   border: none;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.5s ease;
   margin: 0em 0 1em 0;
 
   &:hover {
-    background-color: #444;
+    background-color: #007BECFF;
   }
 `;
 

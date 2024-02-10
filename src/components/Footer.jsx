@@ -44,6 +44,7 @@ const LinkListItem = styled.li`
   a{
     text-decoration: none;
   }
+  a:link { text-decoration: none; color:#FFF; }
   a:visited { text-decoration: none; color:#FFF; }
   a:hover { text-decoration: none; color: #007bec; }
   a:focus { text-decoration: none; color: #007bec; }
@@ -109,7 +110,7 @@ function Footer(props) {
                         </LinkListItem>
                         <LinkListItem>
                             <LinkText>
-                                <NavLink to="/skis">Hitta oss</NavLink>
+                                <NavLink to="/findus">Hitta oss</NavLink>
                             </LinkText>
                         </LinkListItem>
                     </LinkList>

@@ -89,6 +89,7 @@ const NavItem = styled.li`
   a{
     text-decoration: none;
   }
+  a:link { text-decoration: none; color:#FFF; }
   a:visited { text-decoration: none; color:black; }
   a:hover { text-decoration: none; color: #007bec; }
   a:focus { text-decoration: none; color: #007bec; }

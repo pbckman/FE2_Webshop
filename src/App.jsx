@@ -14,6 +14,7 @@ import TermsOfPurchase from "./pages/TermsOfPurchase.jsx";
 import AllProducts from "./pages/AllProducts.jsx"
 
 import { CartProvider } from "./components/CartContext.jsx";
+import FindUs from "./pages/FindUs.jsx";
 const GlobalStyle = createGlobalStyle`
   body{
     margin: 0;
@@ -40,6 +41,7 @@ function App() {
               <Route path="/products/:id" element={<Product />} />
               <Route path="/termsofpurchase" element={<TermsOfPurchase/>} />
               <Route path="/allproducts" element={<AllProducts />} />
+              <Route path="findus" element={<FindUs />} />
           </Routes> 
         </CartProvider>
         <GlobalStyle />
