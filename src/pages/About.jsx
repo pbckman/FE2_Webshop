@@ -14,6 +14,9 @@ const AboutPic = styled.div`
   background-size: contain;
   height: 250px;
   width: 100%;
+  @media (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -29,6 +32,9 @@ const Heading = styled.h1`
 const SubHeading = styled.h2`
   text-align: center;
   padding: 0 20px 0 20px;
+  @media (max-width: 1200px) {
+    font-size: 15px;
+  }
 `;
 
 const MainText = styled.div`

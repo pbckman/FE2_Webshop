@@ -8,7 +8,6 @@ const FooterWrapper = styled.footer`
   padding: 20px;
   width: 100%;
   height: 20%;
-  margin: 0;
   left:0;
   bottom:0;
   right:0;
@@ -27,6 +26,9 @@ const LinkWrapper = styled.div`
   display: flex;
   justify-content: center;
   padding-right: 60px;
+  @media (max-width: 1000px) {
+    font-size: 10px;
+  }
 `;
 
 const LinkList = styled.ul`

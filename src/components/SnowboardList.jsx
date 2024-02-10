@@ -12,6 +12,23 @@ align-items: center;
 padding-inline-start: 400px;
 padding-inline-end: 400px;
 margin: 15px;
+  @media (max-width: 1500px) {
+    padding-inline-start: 50px;
+    padding-inline-end: 50px;
+    justify-content: center;
+  }
+
+  @media (max-width: 600px) {
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+    justify-content: center;
+  }
+
+  @media (max-width: 400px) {
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    justify-content: center;
+  }
 `
 
 

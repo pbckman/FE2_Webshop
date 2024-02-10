@@ -23,6 +23,11 @@ const SiteTitle = styled.div`
   font-size: 30px;
   padding-left: 20px;
   padding-top: 20px;
+  margin-right: -180px;
+  @media(max-width: 1000px) {
+    padding: 0;
+    margin: 0;
+  }
 
   a {
     text-decoration: none;
@@ -34,9 +39,6 @@ const SiteTitle = styled.div`
 
     & span {
       color: #007BECFF;
-    }
-    @media(max-width: 1000px) {
-      padding: 0;
     }
   }
 `;
@@ -59,7 +61,7 @@ const NavLinkWrapper = styled.div`
 const NavList = styled.ul`
   list-style: none;
   display: flex;
-  gap: 60px;
+  gap: 40px;
   margin: 0;
   padding-top: 20px;
   @media(max-width: 1000px) {
@@ -72,9 +74,8 @@ const NavList = styled.ul`
 const CenteredNav = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center; /* margin-left: auto; */
-  flex: 1;                 /* margin-right: auto; */
-  padding-right: 180px;
+  justify-content: center;
+  flex: 1;
   @media(max-width: 1000px) {
     padding: 0;
     text-align: center;
@@ -82,7 +83,7 @@ const CenteredNav = styled.div`
 `;
 
 const NavItem = styled.li`
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   color: white;
   a{
@@ -106,8 +107,7 @@ const UnderNavbar = styled.div`
   margin: 0;
   padding: 0;
   @media(max-width: 1000px) {
-    display: flex;
-    margin-top: 20px;
+    display: none;
   }
 `;
 
@@ -128,8 +128,8 @@ const UnderNavBarText = styled.div`
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   display: none;
   position: absolute;
-  right: 20px;
-  top: 21px;
+  right: 40px;
+  top: 23px;
   color: black;
   font-size: 28px;
   cursor: pointer;
@@ -141,7 +141,7 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 const StyledNavLink = styled.div`
   display: flex;
   align-items: center;
-  padding: 10px 40px 0 0; // Decrease the right padding to move the icon to the left
+  padding: 10px 40px 0 0;
   text-decoration: none;
 
   &:hover {

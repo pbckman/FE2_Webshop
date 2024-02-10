@@ -16,6 +16,10 @@ const FrontPic = styled.div`
   align-items: center;
   justify-content: flex-start;
   position: relative;
+  @media (max-width: 1000px) {
+    margin-top: 30px;
+
+  }
 `;
 
 const HeroText = styled.div`
@@ -62,6 +66,10 @@ align-items: center;
 padding-inline-start: 370px;
 padding-inline-end: 370px;
 margin: 15px;
+  @media(max-width: 1140px) {
+    padding-inline-start: 80px;
+    padding-inline-end: 40px;
+  }
 `
 function Home (props) {
    
