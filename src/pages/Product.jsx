@@ -4,7 +4,9 @@ import Footer from '../components/Footer.jsx';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-import { CartContext } from '../components/CartContext.jsx'; // Importera din CartContext
+import { CartContext } from '../components/CartContext.jsx';
+import SkiQuantitySelector from '../components/QuantityOfProductSelector.jsx';
+import CustomAlert from '../components/CustomAlert.jsx';
 
 const Wrapper = styled.div`
  display: flex;
@@ -94,7 +96,16 @@ margin-top: 30px;
 margin-bottom: 20px;
 `
 
-const StyledQuantity = styled.div`
+
+const ModalContainer = styled.div`
+  display: ${(props) => (props.show ? 'block' : 'none')};
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
 `;
 
 
@@ -103,8 +114,10 @@ const Product = () => {
     const [product, setProduct] = useState()
     const [selectedSize, setSelectedSize] = useState()
     const [quantity, setQuantity] = useState(1); 
-    const { dispatch } = useContext(CartContext); 
+    const { cart, dispatch } = useContext(CartContext); 
     const [showPopup, setShowPopup] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [inCartQuantity, setInCartQuantity] = useState(0);
 
     const sizeMappings = {
         size_boot42: "42",
@@ -155,27 +168,58 @@ const Product = () => {
         fetchData()
     }, [id])
 
+    useEffect(() => {
+        const productInCart = cart.items.find(item => item.product.id === product?.id && item.product.selectedSize === selectedSize);
+        setInCartQuantity(productInCart ? productInCart.product.quantity : 0);
+      }, [cart, product, selectedSize]);
+
     const changeSize = (size) => {
         setSelectedSize(size)
     }
 
-    const handleAddToCart = () => {
-        dispatch({
-          type: 'ADD_TO_CART',
-          payload: {
-            product: {
-              id: product.id,
-              title: product.title,
-              price: product.price,
-              selectedSize,
-              quantity,
-            },
-          },
-        });
-        setShowPopup(true);
-        setTimeout(() => setShowPopup(false), 3000);
-      };
-      
+
+const Modal = ({ show, onClose, alertMessage }) => {
+  return (
+    <ModalContainer show={show}>
+      <CustomAlert message={alertMessage} onClose={onClose} />
+    </ModalContainer>
+  );
+};
+
+const handleAddToCart = () => {
+    const selectedSizeProduct = product?.sizes?.find(size => size.size === selectedSize);
+  if (!selectedSizeProduct) {
+    setShowModal(true);
+    setTimeout(() => setShowModal(false), 7000);
+    return;
+  }
+
+  const availableQuantity = selectedSizeProduct.quantity;
+  const totalQuantityInCart = inCartQuantity + quantity;
+
+  if (totalQuantityInCart > availableQuantity) {
+    setShowModal(true);
+    setTimeout(() => setShowModal(false), 7000);
+    return;
+  }
+    if (selectedSizeProduct && quantity <= selectedSizeProduct.quantity) {
+    dispatch({
+      type: 'ADD_TO_CART',
+      payload: {
+        product: {
+          id: product.id,
+          title: product.title,
+          price: product.price,
+          selectedSize,
+          quantity,
+        },
+      },
+    });
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 1500);
+  } 
+};
+
 
     return (
         <>
@@ -214,18 +258,9 @@ const Product = () => {
                                 )}
                             </Quantity>
 
-                            
-                            <StyledLabel>Välj Antal</StyledLabel>
-                            <StyledQuantity>    
-                                <input
-                                    type="number"
-                                    value={quantity}
-                                    onChange={(e) => setQuantity(e.target.value)}
-                                    min="1"
-                                />
-                            </StyledQuantity>
-
                             <AddToCart>
+                            <SkiQuantitySelector quantity={quantity} setQuantity={setQuantity} />
+                            <div style={{position: 'relative', width: '180px', top: '10px', left: '-5px', background: 'lightblue', padding: '15px', borderRadius: '5px'}}>Antal i varukorgen: {inCartQuantity}</div>
                             <StyledButton onClick={() => window.history.back()}>Tillbaka</StyledButton>
                             <StyledButton onClick={handleAddToCart}>Lägg Till</StyledButton>
                             {showPopup && (
@@ -233,8 +268,9 @@ const Product = () => {
                                 Tillagd till varukorgen
                             </div>
                             )}
+                            <Modal show={showModal} onClose={() => setShowModal(false)} alertMessage={`Antingen så är det slut på produkten, eller så har vi inte så många i lager. Var god välj rätt antal!`} />
                             </AddToCart>
-
+                                
                         </InfoWrapper>
 
 
@@ -244,7 +280,6 @@ const Product = () => {
             ) : (
                 <p>Laddar...</p>
             )}
-
             <Footer />
         </>
     );

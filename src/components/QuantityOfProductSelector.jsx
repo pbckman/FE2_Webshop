@@ -45,11 +45,9 @@ margin-left: 20px;
 }
 `
 
-function SkiQuantitySelector() {
-  const [quantity, setQuantity] = useState(1);
-
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
+function SkiQuantitySelector({ quantity, setQuantity}) {
+    const increaseQuantity = () => {
+      setQuantity(quantity + 1);
   };
 
   const decreaseQuantity = () => {
@@ -59,6 +57,7 @@ function SkiQuantitySelector() {
   };
 
   return (
+
     <StyledQuantitySelector>
       <label>Antal</label>
       <StyledQuantityButton>

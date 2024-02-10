@@ -33,14 +33,14 @@ padding: 20px;
 const StyledRemoveButton = styled.button`
 width: 150px;
 padding: 15px;
-background-color: ${(props) => (props.disabled ? '#003b6b' : '#FF0000FF')}; /* changed to red */
+background-color: ${(props) => (props.disabled ? '#003b6b' : '#FF0000FF')}; 
 color: ${(props) => (props.disabled ? '#b9b9b9' : '#ffffff')};
 cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 border-radius: 10px;
 border: 1px solid lightgrey;
 
 &:hover {
-  background-color: ${(props) => (props.disabled ? '#FF0000FF' : '#FF00007F')}; /* changed to darker red on hover */
+  background-color: ${(props) => (props.disabled ? '#FF0000FF' : '#FF00007F')};
 }
 
 margin-left: 20px;
@@ -49,6 +49,16 @@ margin-left: 20px;
 @media (max-width: 800px) {
   width: 200px;
 }
+`;
+
+const Wrapper = styled.button`
+
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+padding-inline-start: 50px;
+padding-inline-end: 50px;
+margin: 15px;
 `;
 
 function Cart() {
@@ -75,28 +85,56 @@ function Cart() {
         setOrderPlaced(true); 
     };
 
+
+    
+      const handleRemoveEntireItem = (productId, selectedSize) => {
+        dispatch({
+          type: 'REMOVE_FROM_CART',
+          payload: {
+            productId,
+            selectedSize,
+          },
+        });
+      };
+   
+
+    const sizeMappings = {
+        size_boot42: "42",
+        size_boot43: "43",
+        size_boot44: "44",
+        size_ski160: "160cm",
+        size_ski170: "170cm",
+        size_ski180: "180cm",
+        size_snowboard144: "144cm",
+        size_snowboard152: "152cm",
+        size_snowboard160: "160cm",
+        size_onesize: "Onesize"
+    }
+
     return (
         <>
             <Navbar />
             {!orderPlaced ? (
-                <div>
-                    <StyledLabel>Varukorg</StyledLabel>
+                <>
+                    <StyledLabel style={{position: 'relative', left: '100px'}}>Varukorg</StyledLabel>
                     {cart.items.map((item, index) => (
                         <div key={index} style={{ border: '1px solid #ddd', padding: '15px', margin: '10px 0' }}>
-                            <div>
-                            <h3>{item.product.title}</h3>
-                            <p>Size: {item.product.selectedSize}</p>
-                            <p>Quantity: {item.product.quantity}</p>
-                            <p>Price: {item.product.price} kr</p>
-                            </div>
-                            <StyledRemoveButton onClick={() => handleRemoveFromCart(item.product.id, item.product.selectedSize)}>Ta Bort</StyledRemoveButton>
+                            <Wrapper>
+                            <h1 style = {{position: 'relative', left: '10px'}}>{item.product.title} </h1>
+                            <h3>Storlek: {sizeMappings[item.product.selectedSize]}</h3>
+                            <h3>Antal: {item.product.quantity}</h3>
+                            <h3>Pris: {item.product.price} kr</h3>
+                            </Wrapper>
+                            <StyledRemoveButton onClick={() => handleRemoveFromCart(item.product.id, item.product.selectedSize)}>-</StyledRemoveButton>
+                            <StyledButton onClick={() => handleAddOneToCart(item.product)}>+</StyledButton>
+                            <StyledButton onClick={() => handleRemoveEntireItem(item.product.id, item.product.selectedSize)}>Ta bort</StyledButton>
                         </div>
                     ))}
                     
-                    <StyledLabel>Total Pris: {totalPrice} kr</StyledLabel>
+                    <StyledLabel style={{position: 'relative', left: '10px'}}>Total Pris: {totalPrice} kr</StyledLabel>
                     <StyledButton onClick={() => window.history.back()}>Tillbaka</StyledButton>
                     <StyledButton onClick={handleOrder}>Beställ</StyledButton>
-                </div>
+                </>
             ) : (
                 <>
                     <StyledLabel>Total Pris: {totalPrice} kr </StyledLabel>
