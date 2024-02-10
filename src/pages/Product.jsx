@@ -11,7 +11,13 @@ import CustomAlert from '../components/CustomAlert.jsx';
 const Wrapper = styled.div`
  display: flex;
  justify-content: space-around;
+
+ @media (max-width: 600px) {
+  flex-direction: column;
+ }
 `
+
+
 const ImgWrapper = styled.div`
 
 width: 800px;
@@ -22,12 +28,20 @@ img {
     
 max-width: 80%;
 max-height: 80%;
-
 }
+
+@media (max-width: 600px) {
+  margin-right: 0;
+  margin-bottom: 10px;
+ }
 `
 const InfoWrapper = styled.div`
 width: 800px;
 margin-top: 100px;
+
+@media (max-width: 600px) {
+  order: -1;
+ }
 `
 
 const Title = styled.div`
@@ -58,7 +72,7 @@ const ButtonWrapper = styled.div`
 }
 
 .button-size:focus {
-    border: 3px solid #F2A42A;
+outline: 3px solid #F2A42A;
 }
 
 .button-size:hover {
@@ -76,6 +90,7 @@ const StyledButton = styled.button`
   width: 150px;
   padding: 15px;
   margin: 30px;
+  margin-left: 0px;
   background-color: ${(props) => (props.disabled ? '#003b6b' : '#007BECFF')};
   color: ${(props) => (props.disabled ? '#b9b9b9' : '#ffffff')};
   cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
@@ -260,7 +275,7 @@ const handleAddToCart = () => {
 
                             <AddToCart>
                             <SkiQuantitySelector quantity={quantity} setQuantity={setQuantity} />
-                            <div style={{position: 'relative', width: '180px', top: '10px', left: '-5px', background: 'lightblue', padding: '15px', borderRadius: '5px'}}>Antal i varukorgen: {inCartQuantity}</div>
+                            <div style={{position: 'relative', width: '180px', top: '10px', left: '-5px', background: 'lightblue', padding: '15px', borderRadius: '5px', marginLeft: '5px'}}>Antal i varukorgen: {inCartQuantity}</div>
                             <StyledButton onClick={() => window.history.back()}>Tillbaka</StyledButton>
                             <StyledButton onClick={handleAddToCart}>Lägg Till</StyledButton>
                             {showPopup && (
