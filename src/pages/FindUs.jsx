@@ -25,10 +25,13 @@ const Box = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 70vh;
+  height: 100vh;
   width: 70vh;
   box-sizing: border-box;
   text-align: center;
+  @media (max-width: 1000px) {
+    width: 40vh
+  }
   `;
 
 function FindUs(props) {
@@ -43,6 +46,11 @@ function FindUs(props) {
                     <BoxesContainer>
                         <Box>
                             <h1>Hitta oss!</h1>
+                            <p>Välkommen till vår butik belägen i hjärtat av Solna, precis vid gränsen till Stockholm och nära Vasastan! Hos oss hittar du ett brett utbud av skidor, snowboards och tillbehör för din nästa äventyrsresa i snön. Kom och upptäck vår passion för vintersport!</p>
+
+                                <p>Tomtebodavägen 3A</p>
+                                    <p>171 65 Solna</p>
+                                    <p>Sverige</p>
                             <APIProvider apiKey={key}>
                                 <Map zoom={15} center={position} mapId={mapId}>
                                     <AdvancedMarker position={position} onClick={() => setOpen(true)}>
@@ -51,7 +59,7 @@ function FindUs(props) {
 
                                     {open && (
                                         <InfoWindow position={position} onCloseClick={() => setOpen(false)}>
-                                            <p>Köp dina skidor här!</p>
+                                            <p>Köp dina skidor och snowboards här!</p>
                                         </InfoWindow>
                                         )}
                                 </Map>

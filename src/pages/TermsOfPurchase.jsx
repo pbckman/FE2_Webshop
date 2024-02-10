@@ -38,6 +38,9 @@ const Box = styled.div`
     padding: 0 40px 0 40px;
     font-size: 14px;
   }
+  @media (max-width: 1000px) {
+    height: fit-content;
+  }
 `;
 
 function TermsOfPurchase(props) {
