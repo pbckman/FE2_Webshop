@@ -15,7 +15,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 45%;
+  width: 30%;
   box-sizing: border-box;
 `;
 
