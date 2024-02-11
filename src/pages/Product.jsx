@@ -14,6 +14,9 @@ const Wrapper = styled.div`
 
  @media (max-width: 600px) {
   flex-direction: column;
+   align-items: center;
+   width: fit-content;
+   padding: 20px;
  }
 `
 
@@ -29,10 +32,12 @@ img {
 max-width: 80%;
 max-height: 80%;
 }
-
-@media (max-width: 600px) {
-  margin-right: 0;
+  
+  @media (max-width: 600px) {
   margin-bottom: 10px;
+  justify-content: start;
+    width: fit-content;
+    padding-left: 50px;
  }
 `
 const InfoWrapper = styled.div`
@@ -41,6 +46,10 @@ margin-top: 100px;
 
 @media (max-width: 600px) {
   order: -1;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
  }
 `
 
@@ -49,7 +58,9 @@ const Title = styled.div`
 `
 
 const Description = styled.div`
-
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `
 
 const Price = styled.div`
@@ -58,6 +69,7 @@ margin-bottom: 50px;
 `
 
 const ButtonWrapper = styled.div`
+  
 
 .button-size {
   background-color: #0276FF;
@@ -102,6 +114,10 @@ const StyledButton = styled.button`
   }
   @media (max-width: 800px) {
     width: 200px;
+  }
+  @media (max-width: 600px) {
+    display: flex;
+    justify-content: center;
   }
 `
 

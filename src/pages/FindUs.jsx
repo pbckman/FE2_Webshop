@@ -29,9 +29,16 @@ const Box = styled.div`
   width: 70vh;
   box-sizing: border-box;
   text-align: center;
-  @media (max-width: 1000px) {
-    width: 40vh
+  font-weight: bold;
+  & > p:nth-of-type(1) {
+    font-weight: normal
   }
+  @media (max-width: 1000px) {
+        width: 40vh
+  } 
+    @media (max-width: 600px) {
+      width: 30vh
+    }
   `;
 
 function FindUs(props) {
@@ -59,7 +66,7 @@ function FindUs(props) {
 
                                     {open && (
                                         <InfoWindow position={position} onCloseClick={() => setOpen(false)}>
-                                            <p>Köp dina skidor och snowboards här!</p>
+                                            <p>Köp dina skidor och snowboards här!np</p>
                                         </InfoWindow>
                                         )}
                                 </Map>

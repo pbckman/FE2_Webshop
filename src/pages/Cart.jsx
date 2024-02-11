@@ -4,7 +4,9 @@ import Navbar from "../components/Navbar.jsx";
 import { CartContext } from '../components/CartContext.jsx';
 import Checkout from './Checkout.jsx';
 
+
 const StyledButton = styled.button`
+  font-family: Montserrat, sans-serif;
   width: 150px;
   padding: 15px;
   margin: 15px;
@@ -52,13 +54,13 @@ margin-left: 20px;
 `;
 
 const Wrapper = styled.button`
-
-flex-wrap: wrap;
-justify-content: space-around;
-align-items: center;
-padding-inline-start: 50px;
-padding-inline-end: 50px;
-margin: 15px;
+    font-family: Montserrat, sans-serif;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-inline-start: 50px;
+    padding-inline-end: 50px;
+    margin: 15px;
 `;
 
 function Cart() {
@@ -131,13 +133,13 @@ function Cart() {
                         </div>
                     ))}
                     
-                    <StyledLabel style={{position: 'relative', left: '10px'}}>Total Pris: {totalPrice} kr</StyledLabel>
+                    <StyledLabel style={{position: 'relative', left: '10px'}}>Summa: {totalPrice} kr</StyledLabel>
                     <StyledButton onClick={() => window.history.back()}>Tillbaka</StyledButton>
                     <StyledButton onClick={handleOrder}>Beställ</StyledButton>
                 </>
             ) : (
                 <>
-                    <StyledLabel>Total Pris: {totalPrice} kr </StyledLabel>
+                    <StyledLabel>Summa: {totalPrice} kr </StyledLabel>
                     <Checkout />
                     <StyledButton onClick={() => setOrderPlaced(false)}>Tillbaka</StyledButton>
                 </>

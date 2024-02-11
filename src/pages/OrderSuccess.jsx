@@ -27,11 +27,16 @@ const OrderSuccessWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white; /* Set the background color to white */
+  background-color: white;
   height: 70vh;
   width: 90vh;
   border-radius: 70px;
   opacity: 0.9;
+  @media (max-width: 600px) {
+    width: fit-content;
+    height: fit-content;
+    padding: 40px;
+  }
 `;
 
 const OrderSuccessTextWrapper = styled.div`
@@ -43,6 +48,9 @@ const OrderSuccessTextWrapper = styled.div`
 const OrderSuccessH1 = styled.h1`
   font-size: 50px;
   font-weight: 600;
+  @media (max-width: 600px) {
+    font-size: 20px;
+  }
 `;
 
 const OrderSuccessH2 = styled.h2`
@@ -50,12 +58,15 @@ const OrderSuccessH2 = styled.h2`
   font-weight: 500;
   text-align: center;
   padding: 0 100px 0 100px;
+  @media (max-width: 800px) {
+    font-size: 13px;
+  }
 `;
 
 const ReturnToSite = styled.div`
   display: flex;
   justify-content: center;
-  font-size: 15px;
+  font-size: 13px;
   a:visited { text-decoration: none; color:black; }
   a:hover { text-decoration: none; color: #007bec; }
 `;

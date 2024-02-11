@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 const FooterWrapper = styled.footer`
   background-color: #333;
   color: #fff;
-  padding: 20px;
+  padding: 20px 0 20px 0;
   width: 100%;
   height: 20%;
   left:0;

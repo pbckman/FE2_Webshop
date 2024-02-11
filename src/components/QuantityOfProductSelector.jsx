@@ -11,6 +11,9 @@ const StyledQuantitySelector = styled.div`
     font-weight: bold;
     padding-right: 30px;
   }
+  @media (max-width: 600px) {
+    justify-content: center;
+  }
 
 `
 
